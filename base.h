@@ -25,6 +25,8 @@ typedef struct
     int generic;
 } GstFooBasePrivate;
 
+void gst_foobase_bar(GstFooBase *self);
+
 G_END_DECLS
 
 #endif // __BASE_H__

@@ -5,6 +5,7 @@
 
 G_BEGIN_DECLS
 
+// Derivable
 #define GST_TYPE_FOODERIVED (gst_fooderived_get_type())
 G_DECLARE_DERIVABLE_TYPE(GstFooDerived, gst_fooderived, GST,
                          FOODERIVED, GstFooBase)
@@ -15,9 +16,7 @@ G_DECLARE_DERIVABLE_TYPE(GstFooDerived, gst_fooderived, GST,
  */
 struct _GstFooDerivedClass
 {
-    GObjectClass parent_class;
-
-    void (*bar)();
+    GstFooBaseClass parent_class;
 
     gpointer padding[12];
 };

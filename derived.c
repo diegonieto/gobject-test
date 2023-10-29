@@ -13,7 +13,8 @@ static void
 gst_fooderived_class_init(GstFooDerivedClass *klass)
 {
     g_print("%s\n", __FUNCTION__);
-    klass->bar = gst_fooderived_bar;
+    GstFooBaseClass *base = GST_FOOBASE_CLASS(klass);
+    base->bar = gst_fooderived_bar;
 }
 
 static void
