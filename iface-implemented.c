@@ -1,5 +1,10 @@
 #include "iface-implemented.h"
 
+struct _FooImplemented {
+  GObject parent;
+  char *filename;
+};
+
 static void foo_implemented_interface_init(FooIfaceInterface *iface);
 
 G_DEFINE_TYPE_WITH_CODE(FooImplemented, foo_implemented, G_TYPE_OBJECT,
@@ -7,7 +12,7 @@ G_DEFINE_TYPE_WITH_CODE(FooImplemented, foo_implemented, G_TYPE_OBJECT,
                                               foo_implemented_interface_init))
 
 static void
-foo_implemented_baz(FooImplemented *self,
+foo_implemented_baz(FooIface *self,
                     GError **error)
 {
   g_print("baz: %s.\n", __PRETTY_FUNCTION__);

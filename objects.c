@@ -31,7 +31,7 @@ int main()
 
     FooIface *iface;
     obj = g_object_new(FOO_TYPE_IMPLEMENTED, NULL);
-    foo_iface_baz(obj, NULL);
+    foo_iface_baz((FooIface  *)obj, NULL);
 
     return 0;
 }
