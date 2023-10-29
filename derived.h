@@ -21,6 +21,18 @@ struct _GstFooDerivedClass
     gpointer padding[12];
 };
 
+
+// Final
+#define GST_TYPE_FOOFINAL gst_foofinal_get_type()
+G_DECLARE_FINAL_TYPE (GstFooFinal, gst_foofinal, GST, GST_TYPE_FOOFINAL, GstFooBase)
+struct _GstFooFinal
+{
+    GstFooBase parent_class;
+
+    int my_value;
+};
+
+
 G_END_DECLS
 
 #endif // __DERIVED_H__

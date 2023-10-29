@@ -1,5 +1,31 @@
 #include "derived.h"
 
+/* FINAL */
+
+G_DEFINE_TYPE (GstFooFinal, gst_foofinal, GST_TYPE_FOOBASE)
+
+static void
+gst_foofinal_bar ()
+{
+    g_print("%s\n", __FUNCTION__);
+}
+
+static void
+gst_foofinal_class_init (GstFooFinalClass *klass)
+{
+    g_print("%s\n", __FUNCTION__);
+    GstFooBaseClass *base = (GstFooBaseClass *)klass;
+    base->bar = gst_foofinal_bar;
+}
+
+static void
+gst_foofinal_init (GstFooFinal *self)
+{
+    g_print("%s\n", __FUNCTION__);
+}
+
+/* DERIVABLE */
+
 typedef struct
 {
     int foo;
